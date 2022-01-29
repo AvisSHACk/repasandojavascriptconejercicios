@@ -149,8 +149,11 @@ document.querySelector("#buttonSubmit4").addEventListener("click", () => {
     alert(mayorOMenor())
 })
 
+/**
+ * Crear un programa que determine si un string introducido por un usuario
+ * empieza con un número o con una letra.
+ */
 
-//============================================================================
 const whatStart = (string) => {
     if(isNaN(string.charAt())) {
         return "La cadena de caracteres empieza con una letra";
@@ -166,6 +169,12 @@ button5.addEventListener("click", () => {
     alert(whatStart(input5.value));
 })
 
+
+
+/**
+ * Crear un programa donde se introduzca los 3 angulos internos de un
+ * triangulo y se determine si el triangulo es valido o no
+*/
 const  trianguloValido = () => {
 
   let angulo1 = parseInt(prompt("Ingresa un valor de angulo")),
@@ -185,8 +194,10 @@ document.querySelector("#buttonSubmit6").addEventListener('click', () => {
   alert(trianguloValido());
 })
 
-"===================================================================="
 
+/**
+ * Determinar si una palabra empieza con mayusculas o no
+ */
 const startUpper = (string) => {
   if(string.charAt() == string.charAt().toUpperCase()) {
     return `${string} empieza con una letra mayuscula`;
@@ -201,6 +212,11 @@ let input7 = document.querySelector("#input7"),
 buttonSubmit7.addEventListener("click", () => {
   alert(startUpper(input7.value));
 })
+
+
+/**
+ * Determinar si un año dado es bisiesto o no
+ */
 
 const esBisiesto = () => {
     let year = prompt('Ingresa cualquier año');
@@ -219,6 +235,16 @@ document.querySelector("#buttonSubmit8").addEventListener('click', () => {
     alert(esBisiesto());
 })
 
+
+/**
+ * Escribir un programa JavaScript en el que el programa escoge al azar un
+ * entero entre 1 y 10, el usuario , luego a el usuario se le pedirá que
+ * introduzca un número en un popup para intentar adivinarlo. Si la entrada
+ * del usuario coincide con el número de conjetura, el programa mostrará un
+ * mensaje de "buen trabajo" de lo contrario mostrará un mensaje de "No
+ * corresponde"
+ */
+
 const adivinaNumero = () => {
     let userNumber = prompt("La maquina ya dio su numero del 1 a 10, intenta adivinarlo")
     let numeroMaquina = Math.round(Math.random() * 10);
@@ -233,4 +259,116 @@ const adivinaNumero = () => {
 
 document.querySelector("#buttonSubmit9").addEventListener('click', () => {
     alert(adivinaNumero());
+})
+
+
+/**
+ * Mostrar todos los números de 1 a n aumentando de 1 en 1 donde n lo ingresa
+ * el usuario en un prompt.
+ */
+const incrementaN = () => {
+    let n = prompt("Ingresa un numero");
+
+    let contador = 0;
+    let msg = ' ';
+    while (contador < n) {
+        msg += contador + 1 + ' ';
+        contador++;
+    }
+    
+    return msg;
+}
+
+document.querySelector('#buttonSubmit10').addEventListener('click', () => {
+    alert(incrementaN());
+})
+
+/**
+ * Mostrar todos los números de 1 a N aumentando de 2 en 2 donde n lo ingresa el usuario en un prompt.
+ */
+ const incrementaNdos = () => {
+    let n = prompt("Ingresa un numero");
+
+    let contador = 0;
+    let msg = ' ';
+    while (contador < n) {
+        msg += contador + 1 + ' ';
+        contador+=2;
+    }
+    
+    return msg;
+}
+
+document.querySelector('#buttonSubmit11').addEventListener('click', () => {
+    alert(incrementaNdos());
+})
+
+
+/**
+ * Mostrar todos los números de N a 1 disminuyendo de 1 en 1 donde n lo ingresa el usuario en un prompt.
+ */
+ const disminuyeN = () => {
+    let n = prompt("Ingresa un numero");
+
+    let msg = ' ';
+    while (n >= 1) {
+        msg += n + ' ';
+        n-=1;
+    }
+    
+    return msg;
+}
+
+document.querySelector('#buttonSubmit12').addEventListener('click', () => {
+    alert(disminuyeN());
+})
+
+/**
+ * Escribir utilizando console.log la tabla del 9 hasta 9x10.
+ */
+
+
+const tablaNueve = () => {
+    let contador = 0;
+    let msg = '';
+    while (contador <= 10){
+        msg += `9 x ${contador} = ${9 * contador}\n`;
+        contador+=1;
+    }
+
+    return msg;
+
+
+}
+
+document.querySelector("#buttonSubmit13").addEventListener("click", () => {
+    alert(tablaNueve());
+})
+
+/**
+ * Pedir al usuario que ingrese un número en un prompt, hacer la suma de 
+ * todos los dígitos, validar que el número ingresado no contenga letras.
+ */
+
+const sumaDigitos = () => {
+    let numero = prompt("Ingresa un numero");
+
+    if(isNaN(numero)) {
+        return "El numero ingresado no es un valor numerico";
+    }
+
+
+    numero = numero.split('');
+    let suma = 0;
+    let contador = 0;
+    while(contador <= numero.length - 1) {
+        suma += parseInt(numero[contador]);
+        contador++;
+    }
+
+    return suma;
+}
+
+document.querySelector("#buttonSubmit14").addEventListener("click", () => {
+    alert(sumaDigitos());
 })
