@@ -150,6 +150,7 @@ document.querySelector("#buttonSubmit4").addEventListener("click", () => {
 })
 
 
+//============================================================================
 const whatStart = (string) => {
     if(isNaN(string.charAt())) {
         return "La cadena de caracteres empieza con una letra";
@@ -163,4 +164,73 @@ let button5 = document.querySelector("#buttonSubmit5");
 
 button5.addEventListener("click", () => {
     alert(whatStart(input5.value));
+})
+
+const  trianguloValido = () => {
+
+  let angulo1 = parseInt(prompt("Ingresa un valor de angulo")),
+    angulo2 = parseInt(prompt("Ingresa un valor de angulo")),
+    angulo3 = parseInt(prompt("Ingresa un valor de angulo"));
+
+  if (angulo1 + angulo2 + angulo3 === 180) {
+    return 'El triangulo es valido';
+  } else {
+    return "El triangulo ingresado es invalido";
+  }
+
+}
+
+
+document.querySelector("#buttonSubmit6").addEventListener('click', () => {
+  alert(trianguloValido());
+})
+
+"===================================================================="
+
+const startUpper = (string) => {
+  if(string.charAt() == string.charAt().toUpperCase()) {
+    return `${string} empieza con una letra mayuscula`;
+  } else {
+    return `${string} no empieza con una letra mayuscula`;
+  }
+}
+
+let input7 = document.querySelector("#input7"),
+  buttonSubmit7 = document.querySelector("#buttonSubmit7");
+
+buttonSubmit7.addEventListener("click", () => {
+  alert(startUpper(input7.value));
+})
+
+const esBisiesto = () => {
+    let year = prompt('Ingresa cualquier año');
+
+    if(year % 4 == 0 && (year % 100 !== 0 || year % 400 == 0)) {
+        return `${year} es bisiesto`;
+    } else {
+        return `${year} no es bisiesto`;
+    }
+}
+
+
+
+
+document.querySelector("#buttonSubmit8").addEventListener('click', () => {
+    alert(esBisiesto());
+})
+
+const adivinaNumero = () => {
+    let userNumber = prompt("La maquina ya dio su numero del 1 a 10, intenta adivinarlo")
+    let numeroMaquina = Math.round(Math.random() * 10);
+    console.log(numeroMaquina);
+    if(userNumber === numeroMaquina) {
+        return "Buen trabajo"
+    } else {
+        return "No corresponde";
+    }
+
+}
+
+document.querySelector("#buttonSubmit9").addEventListener('click', () => {
+    alert(adivinaNumero());
 })
