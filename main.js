@@ -372,3 +372,213 @@ const sumaDigitos = () => {
 document.querySelector("#buttonSubmit14").addEventListener("click", () => {
     alert(sumaDigitos());
 })
+
+/**
+ * Realizar la suma de todos los números pares entre N y M donde N y M los ingresa un usuario.
+ */
+
+const sumarNM = () => {
+    let N = parseInt(prompt("Ingresa un numero")),
+    M = parseInt(prompt("Ingresa un numero mayor al anterior")),
+    suma = 0;
+    while(N <= M) {
+        if(N % 2 === 0) {
+            suma += N;
+        }
+
+        N++;
+    }
+
+    return suma;
+    
+}
+
+
+document.querySelector("#buttonSubmit15").addEventListener('click', () => {
+    alert(sumarNM());
+})
+
+/**
+ * Realizar el factorial de los primeros N números.
+ */
+
+const factorial = () => {
+    let N = parseInt(prompt("Ingresa un numero"));
+
+    let factorial = 1;
+    while (N >= 1) {
+        factorial *= N;
+        N--;
+
+    }
+
+    return factorial;
+}
+
+
+document.querySelector("#buttonSubmit16").addEventListener('click', () => {
+    alert(factorial());
+})
+
+/**
+ * Encontrar todos los divisores de un número.
+ */
+
+ const divisoresN = () => {
+    let N = parseInt(prompt("Ingresa un numero"));
+
+    let divisores = '',
+    contador = 0;
+    while (contador <= N) {
+        if(N % contador == 0) {
+            divisores += contador + ' ';
+        }
+        contador++;
+
+    }
+
+    return divisores;
+}
+
+
+document.querySelector("#buttonSubmit17").addEventListener('click', () => {
+    alert(divisoresN());
+})
+
+/**
+ * 
+ * Determinar si un número ingresado por el usuario en un loop es primo o no, validar 
+ * que el número ingresado sea mayor o igual a dos.
+*/
+
+const esPrimo = () => {
+    let numero = parseInt(prompt("Ingresa un numero"));
+
+
+    let raiz = Math.round(Math.pow(numero, 0.5));
+    let contador = 2;
+    let primo = true;
+    while(contador <= raiz) {
+        if(numero % contador == 0) {
+            primo = false;
+            break;
+        }
+
+        contador++;
+    }
+
+    if(primo) {
+        return "El numero ingresado es primo";
+    } else {
+        return "El numero ingresado no es primo";
+    }
+}
+
+document.querySelector("#buttonSubmit18").addEventListener("click", () => {
+    alert(esPrimo());
+})
+
+/**
+ * 
+ * Crear un programa que determine si un número es perfecto o no, (se dice 
+ * que un número es perfecto si el número es igual a sus divisores, ejemplos 6 = 1 + 2 + 3)
+*/
+
+const nPerfectos = () => {
+    let numero = parseInt(prompt("Ingresa un numero"));
+    let result = 0;
+
+    for(let i = 0; i < numero; i++) {
+        if(numero % i == 0) {
+            result += i;
+        }
+    }
+
+    // while(contador < numero) {
+    //     if(numero % contador == 0) {
+    //         result += contador;
+    //     }
+
+    //     contador++;
+    // }
+
+    if(result === numero) {
+        return `${numero} es un numero perfecto ya que la suma de sus divisores da ${result}`;
+    } else {
+        return `${numero} no es un numero perfecto ya que la suma de sus divisores da ${result}`;
+    }
+}
+
+document.querySelector("#buttonSubmit19").addEventListener("click", () => {
+    alert(nPerfectos());
+})
+
+/**
+ * Generar los primeros N números primos, donde n es ingresado por el usuario.
+ * 
+ */
+
+const primerosPrimos = () => {
+    let N = parseInt(prompt("Ingresa un numero"));
+    let contador = 2;
+    let msg = "";
+
+    while(contador <= N){
+        let contador2 = 2;
+        let primo = true;
+        while(contador2 < contador) {
+            if(contador % contador2 == 0) {
+                primo = false;
+                break;
+            }
+
+            contador2++;
+        }
+
+        if(primo) {
+            msg += contador + ' ';
+        }
+
+        contador++;
+    }
+
+    return msg;
+}
+
+document.querySelector("#buttonSubmit20").addEventListener("click", () => {
+    alert(primerosPrimos());
+})
+
+/**
+ * Generar los primeros N números perfectos.
+ * 
+ */
+
+const primerosPerfectos = () => {
+    let N = parseInt(prompt("Ingresa un numero"));
+    let msg = "";
+    let contador = 1;
+
+    while(contador <= N) {
+        let contador2 = 1;
+        let sumaPerfecto = 0;
+        while(contador2 < contador) {
+            if(contador % contador2 === 0) {
+                sumaPerfecto += contador2;
+            }
+
+            contador2++;
+        }
+
+        if(contador == sumaPerfecto) {
+            msg += contador + " ";
+        }
+        contador++;
+    }
+
+    return msg;
+}
+
+document.querySelector("#buttonSubmit21").addEventListener("click", () => {
+    alert(primerosPerfectos());
+})
